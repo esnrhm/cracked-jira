@@ -2,6 +2,7 @@ version: '3'
 
 services:
   jira:
+    container_name: jira
     environment:
       - 'JIRA_DATABASE_URL=postgresql://jira@postgresql/jiradb'
       - 'JIRA_DB_PASSWORD=jellyfish'
@@ -26,6 +27,7 @@ services:
         max-file: "10"
 
   postgresql:
+    container_name: postgresql
     environment:
       - 'POSTGRES_USER=jira'
       - 'POSTGRES_PASSWORD=jellyfish'
