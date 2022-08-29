@@ -14,9 +14,9 @@ services:
     depends_on:
       - postgresql
     build: .
-    image: jira
     volumes:
-      - ./jiradata:/var/atlassian/jira
+      - jiradata:/var/atlassian/jira
+    image: jira
     ports:
       - '80:8080'
     logging:
@@ -34,9 +34,9 @@ services:
       - 'POSTGRES_COLLATE=C'
       - 'POSTGRES_COLLATE_TYPE=C'
     restart: always
-    image: postgres:9.5-alpine
     volumes:
-      - ./postgresqldata:/var/lib/postgresql/data
+      - postgresqldata:/var/lib/postgresql/data
+    image: postgres:9.5-alpine
     logging:
       driver: "json-file"
       options:
@@ -44,3 +44,8 @@ services:
         max-file: "10"
 
 
+volumes:
+  jiradata:
+    external: false
+  postgresqldata:
+    external: false
