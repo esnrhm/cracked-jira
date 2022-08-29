@@ -1,9 +1,11 @@
-# cracked-jira
-1- install docker and docker-compose 
+cracked-jira
+
+
+1- install docker and docker-compose <br />
 2- run command 'docker-compose up -d'
 
 
-# port expose in docke-compose is 80.
+port expose in docke-compose is 80.
 browse "localhost" or your ip.
 
 when you see the license page use this code 
